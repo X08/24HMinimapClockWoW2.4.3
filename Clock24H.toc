@@ -1,0 +1,6 @@
+## Interface: 20400
+## Title: Clock24H
+## Notes: 24-hour clock
+## Version: 1.0
+
+Clock24H.lua
