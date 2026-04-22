@@ -2,15 +2,16 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function()
 
-  local function SetTimeFormat(use24)
-    SetCVar("timeMgrUseMilitaryTime", use24 and 1 or 0)
-    if TimeManagerMilitaryTimeCheck then
-      TimeManagerMilitaryTimeCheck:SetChecked(use24)
-    end
-    if TimeManager_MilitaryTimeCheck then
-      TimeManager_MilitaryTimeCheck()
-    end
+local function SetTimeFormat(use24)
+  SetCVar("timeMgrUseMilitaryTime", use24 and 1 or 0)
+  SetCVar("timeMgrUseLocalTime", 1)
+  if TimeManagerMilitaryTimeCheck then
+    TimeManagerMilitaryTimeCheck:SetChecked(use24)
   end
+  if TimeManager_MilitaryTimeCheck then
+    TimeManager_MilitaryTimeCheck()
+  end
+end
 
   -- Apply saved setting
   SetTimeFormat(GetCVar("timeMgrUseMilitaryTime") == "1")
